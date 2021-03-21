@@ -1,11 +1,28 @@
-import functools
+class Stationery:
+    def __init__(self, title='base'):
+        self.title = title
+
+    def draw(self):
+        print('Запуск отрисовки')
 
 
-def multiplier(a, b):
-    return a * b
+class Pen(Stationery):
+    def draw(self):
+        print(f'Ручка начала отрисовку с титулем {self.title}')
 
 
-my_list = [i for i in range(100, 1001) if i % 2 == 0]
-print(my_list)
+class Pencil(Stationery):
+    def draw(self):
+        print(f'Карандаш начал отрисовку с титулем {self.title}')
 
-print(functools.reduce(multiplier, my_list))
+
+class Handle(Stationery):
+    def draw(self):
+        print(f'Маркер начал отрисовку с титулем {self.title}')
+
+
+var_1 = Pen('Parker').draw()
+var_2 = Pencil(title='tree').draw()
+var_3 = Handle()
+var_3.draw()
+var_4 = Stationery('boss').draw()
